@@ -17,7 +17,7 @@ export dfgadflysegplot # no need to using Gadfly
 
 using DataFrames
 include("dfpreview.jl");
-export preview
+export preview, middle
 
 end
 
