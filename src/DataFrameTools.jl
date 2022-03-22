@@ -15,5 +15,9 @@ export filtern!
 include("dfgadflysegplot.jl")
 export dfgadflysegplot # no need to using Gadfly
 
+using DataFrames
+include("dfpreview.jl");
+export preview
+
 end
 
