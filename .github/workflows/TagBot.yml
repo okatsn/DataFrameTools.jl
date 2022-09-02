@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: julia-actions/add-julia-registry@v1
         with:
-          key: ${{ okenv.secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           registry: okatsn/OkRegistry
       - uses: julia-actions/setup-julia@v1
         with:
