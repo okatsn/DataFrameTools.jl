@@ -24,7 +24,7 @@ jobs:
       - uses: julia-actions/julia-runtest@v1
 
   TagBot:
-    if: github.event_name == 'workflow_dispatch' || github.actor == 'JuliaTagBot'
+    # if: github.event_name == 'workflow_dispatch' || github.actor == 'JuliaTagBot'
     runs-on: ubuntu-latest
     steps:
       - uses: JuliaRegistries/TagBot@v1
@@ -33,3 +33,5 @@ jobs:
           registry: okatsn/OkRegistry # for custom registry
           # If your registry is public, this is all you need to do. 
           # For more information, see [here](https://github.com/JuliaRegistries/TagBot#custom-registries)
+
+
