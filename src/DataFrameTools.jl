@@ -1,7 +1,7 @@
 module DataFrameTools
 
 # Write your package code here.
-using DataFrames, MAT, CSV
+using DataFrames, MAT, CSV, Dates
 include("readtable.jl")
 export readtable
 
@@ -12,12 +12,23 @@ export dfvstack
 include("filtern.jl")
 export filtern!
 
-include("dfgadflysegplot.jl")
-export dfgadflysegplot # no need to using Gadfly
+# include("dfgadflysegplot.jl") # Deprecated
+# export dfgadflysegplot # no need to using Gadfly
 
-using DataFrames
 include("dfpreview.jl");
 export preview, middle
 
-end
+include("manipulatearray.jl")
+export convertdf2!
+export checkparse
+export reducetype!
+export reducetype
+export describeinstr
+export islnan
+export selectnames, selectname
+export get1var
+export chknnm
+export isnnm
+export ifstrparse
 
+end
