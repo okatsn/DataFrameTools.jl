@@ -11,6 +11,7 @@ DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
 MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
 
 [compat]
+CSV = "0.10"
 DataFrames = "1"
 julia = "1.6.4"
 
