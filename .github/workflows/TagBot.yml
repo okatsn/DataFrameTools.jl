@@ -1,33 +1,15 @@
+# Modified from the [Default TagBot template in PkgTemplates](https://github.com/JuliaCI/PkgTemplates.jl/blob/master/templates/github/workflows/TagBot.yml)
+# Trigger TagBot only if
 name: TagBot
 
 on:
-  push:
-    paths:
-      - 'Project.toml'
-    branches:
-      - main
-      - master
+  repository_dispatch:
+    types: [trigger-tagbot]
   issue_comment:
     types:
       - created
-  # see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issue_comment
   workflow_dispatch:
-  # see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
 jobs:
-  # # No need for this since in DocCI there are tests
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: julia-actions/add-julia-registry@v1
-  #       with:
-  #         key: ${{ secrets.SSH_KEY }}
-  #         registry: okatsn/OkRegistry
-  #     - uses: julia-actions/setup-julia@v1
-  #       with:
-  #         version: 1
-  #     - uses: julia-actions/julia-runtest@v1
-
   TagBot:
     # if: github.event_name == 'workflow_dispatch' || github.actor == 'JuliaTagBot'
     runs-on: ubuntu-latest
@@ -35,8 +17,5 @@ jobs:
       - uses: JuliaRegistries/TagBot@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          registry: okatsn/OkRegistry # for custom registry
-          # If your registry is public, this is all you need to do.
-          # For more information, see [here](https://github.com/JuliaRegistries/TagBot#custom-registries)
-
-
+          ssh: ${{ secrets.DOCUMENTER_KEY }}
+          registry: okatsn/OkRegistry
