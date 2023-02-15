@@ -1,7 +1,7 @@
 name = "DataFrameTools"
 uuid = "2e886b56-b55e-403a-a2d0-ccbf75d993da"
 authors = ["Tsung-Hsi Wu <okatsn@gmail.com>"]
-version = "0.5.3"
+version = "0.5.4"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
@@ -9,14 +9,12 @@ DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
 MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
-OkPkgTemplates = "38290ba8-8fbe-457b-bf75-0e4980da3840"
 
 [compat]
 CSV = "0.10.9"
 DataFrames = "1"
 DocumenterTools = "0.1.16"
 MAT = "0.10.3"
-OkPkgTemplates = "0.3.0"
 julia = "1.6.4"
 
 [extras]
