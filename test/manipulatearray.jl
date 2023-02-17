@@ -27,6 +27,9 @@ using Dates
         @test !isn("A string.")
     end
 
+end
+
+@testset "ifstrparse" begin
     @test ifstrparse("123", Float64) == 123.0
     @test ismissing(ifstrparse(missing, Float64))
     @test isnothing(ifstrparse(nothing, Float64))
